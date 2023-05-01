@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="testclass">
+        <div class="text" onclick="parent.open('https://www.youtube.com')">"The Calculator"</div>
+        <input type="text" id="fnum" name="firstnumber" placeholder="First Number...">
+        <input type="text" id="snum" name="secondnumber" placeholder="Second Number...">
+        <input type="text" id="result" name="result" placeholder="Result..." readonly>
+        <input type="button" id="submit" onclick="myFunc()" value="Calculate">
+        <input type="button" id="submit2" onclick="resetVal()" value="Reset">
+        <p>This calculates two numbers.<br>But it does not specify what operation.</p>
+    </div>
+
+    <script>
+        function myFunc(){
+            let rndm = Math.floor(Math.random() * 4);
+            if (rndm == 0){
+                sign = '+';
+            }
+            else if (rndm == 1){
+                sign = '-';
+            }
+            else if (rndm == 2){
+                sign = '*';
+            }
+            else if (rndm == 3){
+                sign = '/';
+            }
+            fnum = document.getElementById("fnum").value;
+            snum = document.getElementById("snum").value;
+            let sum = fnum + sign + snum;
+            let intsum = eval(sum);
+            document.getElementById("result").value = intsum;
+            let finput = document.querySelector('#fnum');
+            let sinput = document.querySelector('#snum');
+            finput.setAttribute('readonly', true);
+            sinput.setAttribute('readonly', true);
+        }
+
+        function resetVal(){
+            document.querySelector('#fnum').value = '';
+            document.querySelector('#snum').value = '';
+            document.querySelector('#result').value = '';
+
+            let finput = document.querySelector('#fnum');
+            let sinput = document.querySelector('#snum');
+            finput.removeAttribute('readonly');
+            sinput.removeAttribute('readonly');
+        }
+    </script>
+</body>
+</html>

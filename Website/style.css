@@ -1,0 +1,78 @@
+@font-face {
+    font-family: Minecraft;
+    src: url(assets/MinecraftRegular.otf);
+}
+
+body {
+    font-family: Minecraft;
+    background: black;
+}
+
+.testclass{
+    position: absolute;
+    color: white;
+    font-size: 26pt;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.testclass p{
+    font-size: 12pt;
+    text-align: center;
+}
+
+.text{
+    position: relative;
+    color: white;
+    font-size: 32pt;
+    cursor: pointer;
+    transition-property: all;
+    transition-duration: 50ms;
+    transition-timing-function: ease-in-out; 
+    transition-delay: 120ms;
+}
+
+.text:hover{
+    color: aqua;
+    text-shadow: 0 0 5px aquamarine;
+}
+
+input[type=text]{
+    font-family: Minecraft;
+    width: 50%;
+    height: 25px;
+    cursor: pointer;
+    color: black;
+    background: white;
+    border-style: solid;
+    position: relative;
+}
+
+input[type=button]{
+    font-family: Minecraft;
+    width: 50%;
+    height: 25px;
+    border-color: white;
+    border-style: solid;
+    cursor: pointer;
+    color: white;
+    background: black;
+    position: relative;
+    transition-property: all;
+    transition-duration: 50ms;
+    transition-timing-function: ease-in-out; 
+    transition-delay: 50ms;
+}
+
+input[type=button]:hover{
+    border-color: darkgray;
+    background: white;
+    color: black;
+    transform: scale(1.05);
+}
+
+input[type=button]:active{
+    background: lightgray;
+}
